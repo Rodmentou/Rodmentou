@@ -16,5 +16,5 @@ app.get('/', function (req, res) {
 });
 
 app.listen(app.port, function () {
-	console.log('Server running on ' + env + ' at ' + port + '.');
+	console.log('Server running on ' + env + ' at ' + app.port + '.');
 });
