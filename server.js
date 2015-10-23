@@ -1,8 +1,8 @@
 var express = require('express'),
 	app = express();
 
-var env = 'dev';
-var port = 5000;
+app.env = 'dev';
+app.port = process.env.PORT || 5000;
 
 app.all('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -12,9 +12,10 @@ app.all('*', function(req, res, next) {
 });
 
 app.get('/', function (req, res) {
+	console.log("Someone accessed me!");
 	res.send('Hello there!');
 });
 
-app.listen(port, function () {
-	console.log('Server running on ' + env + ' at ' + port + '.');
+app.listen(app.port, function () {
+	console.log('Server running on ' + app.env + ' at ' + app.port + '.');
 });
