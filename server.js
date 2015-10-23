@@ -13,7 +13,7 @@ app.all('*', function(req, res, next) {
 
 app.get('/', function (req, res) {
 	console.log("Someone accessed me!");
-	res.send('Hello there!');
+	res.send('Olá, delícia!');
 });
 
 app.listen(app.port, function () {
