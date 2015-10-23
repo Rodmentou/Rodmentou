@@ -2,7 +2,7 @@ var express = require('express'),
 	app = express();
 
 var env = 'dev';
-app.port = 5000;
+var port = 5000;
 
 app.all('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -15,6 +15,6 @@ app.get('/', function (req, res) {
 	res.send('Hello there!');
 });
 
-app.listen(app.port, function () {
-	console.log('Server running on ' + env + ' at ' + app.port + '.');
+app.listen(port, function () {
+	console.log('Server running on ' + env + ' at ' + port + '.');
 });
