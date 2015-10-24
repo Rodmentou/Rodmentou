@@ -11,10 +11,20 @@ app.all('*', function(req, res, next) {
   next();
 });
 
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
+
+
+var api = express.Router();
+
 app.get('/', function (req, res) {
 	console.log("Someone accessed me!");
 	res.send('Olá, delícia!');
 });
+
+app.use('/api', api);
 
 app.listen(app.port, function () {
 	console.log('Server running on ' + app.env + ' at ' + app.port + '.');
