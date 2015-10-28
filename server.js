@@ -42,7 +42,6 @@ app.get('/', function (req, res) {
 });
 
 
-app.use('/api', jwtCheck);
 app.use('/api', api);
 
 app.get('/api', function (req, res) {
