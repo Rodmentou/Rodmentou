@@ -1,0 +1,35 @@
+{
+  "name": "rodmentou",
+  "description": "My online profile/curriculum.",
+  "main": "server.js",
+  "authors": [
+    "Rodmentou"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "rodmentou",
+    "angular",
+    "node",
+    "mongodb",
+    "express"
+  ],
+  "homepage": "https://github.com/Rodmentou/Rodmentou",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "config.js"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.7",
+    "angular": "~1.4.7",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}

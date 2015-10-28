@@ -30,7 +30,8 @@ app.all('*', function(req, res, next) {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/website'));
+app.use(express.static(__dirname + '/bower_components'));
 
 
 var api = express.Router();
@@ -42,7 +43,7 @@ var jwtCheck = jwt({
 
 app.get('/', function (req, res) {
 	console.log("Someone accessed me!");
-	res.send('Olá, delícia!');
+	res.json({success: true, message: 'Olá, delícia!'});
 });
 
 

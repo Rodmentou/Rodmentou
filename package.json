@@ -24,12 +24,11 @@
   },
   "homepage": "https://github.com/Rodmentou/Rodmentou#readme",
   "dependencies": {
-    "angular": "^1.4.7",
-    "angular-animate": "^1.4.7",
-    "angular-route": "^1.4.7",
     "body-parser": "^1.14.1",
+    "bower": "^1.6.5",
     "express": "^4.13.3",
     "express-jwt": "^3.1.0",
+    "googleapis": "^2.1.6",
     "mocha": "^2.3.3",
     "mongoose": "^4.2.3"
   }
