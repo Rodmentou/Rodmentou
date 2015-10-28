@@ -12,10 +12,10 @@ if (app.ENV) {
 	app.CLIENT_SECRET = process.env.CLIENT_SECRET || {};
 	app.CLIENT_ID = process.env.CLIENT_ID || {};
 } else {
-	var config = require('./config.js');
-	app.PORT = config.PORT;
-	app.CLIENT_SECRET = config.CLIENT_SECRET;
-	app.CLIENT_ID = config.CLIENT_ID;
+	var config = require('./config.js') || {};
+	app.PORT = config.PORT || {};
+	app.CLIENT_SECRET = config.CLIENT_SECRET || {};
+	app.CLIENT_ID = config.CLIENT_ID || {};
 };
 
 
