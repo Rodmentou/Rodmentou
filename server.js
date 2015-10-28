@@ -1,16 +1,13 @@
 var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
-	mongoose = require('mongoose'),
-	jwt = require('express-jwt');
+	mongoose = require('mongoose');
 
 app.ENV = process.env.IS_PROD || false;
 
 if (app.ENV) {
 	app.PORT = process.env.PORT || 5000;
 	app.DB_URL = process.env.DB_URL;
-	app.CLIENT_SECRET = process.env.CLIENT_SECRET;
-	app.CLIENT_ID = process.env.CLIENT_ID;
 }
 /*
 else {
@@ -38,10 +35,6 @@ app.use(express.static(__dirname + '/bower_components'));
 
 var api = express.Router();
 
-var jwtCheck = jwt({
-	secret: new Buffer(app.CLIENT_SECRET, 'base64'),
-	audience: app.CLIENT_ID
-});
 
 app.get('/', function (req, res) {
 	console.log("Someone accessed me!");
