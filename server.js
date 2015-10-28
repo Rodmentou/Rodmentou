@@ -8,9 +8,9 @@ app.ENV = process.env.IS_PROD || false;
 
 if (app.ENV) {
 	app.PORT = process.env.PORT || 5000;
-	app.DB_URL = process.env.DB_URL || {};
-	app.CLIENT_SECRET = process.env.CLIENT_SECRET || {};
-	app.CLIENT_ID = process.env.CLIENT_ID || {};
+	app.DB_URL = process.env.DB_URL;
+	app.CLIENT_SECRET = process.env.CLIENT_SECRET;
+	app.CLIENT_ID = process.env.CLIENT_ID;
 }
 /*
 else {
