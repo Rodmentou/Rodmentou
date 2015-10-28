@@ -3,14 +3,33 @@
     <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css'>
     <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap-theme.min.css'>
   </head>
-  <body>
+  <body ng-app='app'>
 
+
+    <div ng-controller='mainController'>
+      <input ng-model='name' class='btn btn-default'type='text' placeholder="Digite seu nome"></input>
+      <button ng-click='sendName(name)'class='btn btn-info'>Ok</button>
+
+      <h1 ng-if='delicia'>OLÁ, DELÍCIA! UHMMM </h1>
+    </div>
 
 
     <script src='/angular/angular.min.js'></script>
     <script src='/angular-route/angular-route.min.js'></script>
     <script src='/jquery/dist/jquery.min.js'></script>
     <script src='/bootstrap/dist/js/bootstrap.min.js'></script>
+    <script>
+     var app = angular.module('app', []);
+     app.controller('mainController', function ($scope) {
+       $scope.test = 'oi';
 
+       $scope.sendName = function(name) {
+        if (name == 'Luana') {
+          $scope.delicia = true;
+        }
+       };
+
+     });
+    </script>
   </body>
 </html>
