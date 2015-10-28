@@ -8,7 +8,7 @@ app.ENV = process.env.IS_PROD || false;
 if (app.ENV) {
 	app.PORT = process.env.PORT || 5000;
 	app.DB_URL = process.env.DB_URL;
-}
+};
 /*
 else {
 	var config = require('./config.js');
