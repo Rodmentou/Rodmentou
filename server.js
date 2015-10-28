@@ -4,12 +4,20 @@ var express = require('express'),
 	mongoose = require('mongoose'),
 	jwt = require('express-jwt');
 
-app.ENV = 'dev';
-app.PORT = process.env.PORT || 5000;
-//app.JWT_SECRET = process.env.JWT_SECRET || {};
-app.DB_URL = process.env.DB_URL || {};
-app.CLIENT_SECRET = process.env.CLIENT_SECRET || {};
-app.CLIENT_ID = process.env.CLIENT_ID || {};
+app.ENV = process.env.IS_PROD || false;
+
+if (app.ENV) {
+	app.PORT = process.env.PORT || 5000;
+	app.DB_URL = process.env.DB_URL || {};
+	app.CLIENT_SECRET = process.env.CLIENT_SECRET || {};
+	app.CLIENT_ID = process.env.CLIENT_ID || {};
+} else {
+	var config = require('./config.js');
+	app.PORT = config.PORT;
+	app.CLIENT_SECRET = config.CLIENT_SECRET;
+	app.CLIENT_ID = config.CLIENT_ID;
+};
+
 
 
 app.all('*', function(req, res, next) {
@@ -28,8 +36,8 @@ app.use(express.static(__dirname + '/public'));
 var api = express.Router();
 
 var jwtCheck = jwt({
-	secret: new Buffer(CLIENT_SECRET, 'base64'),
-	audience: CLIENT_ID
+	secret: new Buffer(app.CLIENT_SECRET, 'base64'),
+	audience: app.CLIENT_ID
 });
 
 app.get('/', function (req, res) {
@@ -37,9 +45,15 @@ app.get('/', function (req, res) {
 	res.send('Olá, delícia!');
 });
 
+
 app.use('/api', jwtCheck);
 app.use('/api', api);
 
+app.get('/api', function (req, res) {
+	res.json({success: true, message: 'Wellcome to the API'});
+});
+
+
 app.listen(app.PORT, function () {
-	console.log('Server running on ' + app.ENV + ' at ' + app.PORT + '.');
+	console.log('Server running on Production=' + app.ENV + ' at ' + app.PORT + '.');
 });
