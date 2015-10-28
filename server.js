@@ -11,12 +11,14 @@ if (app.ENV) {
 	app.DB_URL = process.env.DB_URL || {};
 	app.CLIENT_SECRET = process.env.CLIENT_SECRET || {};
 	app.CLIENT_ID = process.env.CLIENT_ID || {};
-} else {
-	var config = require('./config.js') || {};
-	app.PORT = config.PORT || {};
-	app.CLIENT_SECRET = config.CLIENT_SECRET || {};
-	app.CLIENT_ID = config.CLIENT_ID || {};
-};
+}
+/*
+else {
+	var config = require('./config.js');
+	app.PORT = config.PORT;
+	app.CLIENT_SECRET = config.CLIENT_SECRET;
+	app.CLIENT_ID = config.CLIENT_ID;
+}; */
 
 
 
