@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title> Rodmentou </title>
     <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css'>
     <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap-theme.min.css'>
@@ -20,7 +20,12 @@
 
         <div class='navbar-right'>
           <a href='https://github.com/Rodmentou'>
-            <img src='assets/GitHub-Mark-32px.png'></img></a>
+            <img src='assets/GitHub-Mark-32px.png'></img>
+          </a>
+          <a href="http://stackoverflow.com/users/4922108/rodrigo-souza">
+            <img src="http://stackoverflow.com/users/flair/4922108.png" width="208" height="58">
+          </a>
+
         </div>
 
       </div>
@@ -46,22 +51,14 @@
     <script src='/jquery/dist/jquery.min.js'></script>
     <script src='/bootstrap/dist/js/bootstrap.min.js'></script>
     <script src='/angular/angular.min.js'></script>
+    <script src='/angular-storage/dist/angular-storage.min.js'></script>
+    <script src='/angular-jwt/dist/angular-jwt.min.js'> </script>
     <script src='/angular-route/angular-route.min.js'></script>
+    <script src='/angular-cookies/angular-cookies.min.js'></script>
+    <script src="//cdn.auth0.com/js/lock-7.9.min.js"></script>
+    <script src="//cdn.auth0.com/w2/auth0-angular-4.js"></script>
 
-    <script>
-     var app = angular.module('app', []);
-     app.controller('mainController', function ($scope) {
-       $scope.test = 'oi';
 
-       $scope.sendName = function(name) {
-        if (name == 'Luana') {
-          $scope.delicia = 'OLÁ, DELÍCIA!!!!!!!';
-        } else {
-          $scope.delicia = "Ohh, it's you, " + name + ".";
-        }
-       };
-
-     });
-    </script>
+    <script src='js/app.js'></script>
   </body>
 </html>

@@ -30,6 +30,7 @@
     "express": "^4.13.3",
     "express-jwt": "^3.1.0",
     "googleapis": "^2.1.6",
+    "jsonwebtoken": "^5.4.1",
     "mocha": "^2.3.3",
     "mongoose": "^4.2.3"
   }
