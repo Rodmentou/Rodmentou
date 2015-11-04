@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
 	res.json({success: true, message: 'Olá, delícia!'});
 });
 
-
+require('./routes/user')(api);
 app.use('/api', api);
 
 app.get('/api', function (req, res) {
