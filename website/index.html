@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title> Rodmentou </title>
+    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap-theme.min.css'>
+  </head>
+  <body ng-app='app'>
+
+    <div ng-controller='mainController'>
+      <nav class='navbar navbar-default'>
+        <div class='container-fluid'>
+          <div class='navbar-header'>
+            <a class='navbar-brand'>Rodmentou</a>
+          </div>
+
+          <div class='navbar-left'>
+            <button class="btn btn-default navbar-btn"> Home </button>
+          </div>
+
+          <div class='navbar-right'>
+            <a href='https://github.com/Rodmentou'>
+              <img src='assets/GitHub-Mark-32px.png'></img>
+            </a>
+            <a href="http://stackoverflow.com/users/4922108/rodrigo-souza">
+              <img src="http://stackoverflow.com/users/flair/4922108.png" width="208" height="58">
+            </a>
+
+          </div>
+
+        </div>
+      </nav>
+
+      <div>
+        <div class='col-sm-6'>
+          <input ng-model='name' class='btn btn-default'type='text' placeholder="Digite seu nome"></input>
+          <button ng-click='sendName(name)'class='btn btn-info'>Ok</button>
+
+          <h1 ng-bind='delicia'></h1>
+        </div>
+
+        <div class='col-sm-4'> 2</div>
+
+        <div class='col-sm-2'> 3</div>
+      </div>
+
+    </div>
+
+    <div ng-controller='LoginCtrl'>
+      <button class='btn btn-success' ng-click='login()'>Login</button>
+      <button class='btn btn-danger' ng-click='logout()'>Logout</button>
+    </div>
+
+
+
+
+
+
+    <script src='/jquery/dist/jquery.min.js'></script>
+    <script src='/bootstrap/dist/js/bootstrap.min.js'></script>
+    <script src='/angular/angular.min.js'></script>
+    <script src='/angular-jwt/dist/angular-jwt.min.js'> </script>
+    <script src='/angular-route/angular-route.min.js'></script>
+    <script src='/angular-cookies/angular-cookies.min.js'></script>
+    <script src="//cdn.auth0.com/js/lock-7.9.min.js"></script>
+    <script src="//cdn.auth0.com/w2/auth0-angular-4.js"></script>
+    <script src='https://cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js'></script>
+
+
+    <script src='js/app.js'></script>
+  </body>
+</html>
