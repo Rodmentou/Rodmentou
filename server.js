@@ -4,7 +4,7 @@ var express = require('express'),
 	mongoose = require('mongoose');
 
 app.ENV = process.env.IS_PROD || false;
-app.PORT = process.env.PORT || 5000;
+app.PORT = process.env.PORT || 8080;
 app.DB_URL = process.env.DB_URL || 'mongodb://localhost/test';
 app.SECRET = process.env.SECRET || 'ashubaluba';
 app.AUDIENCE = process.env.AUDIENCE || '';
