@@ -1,19 +1,16 @@
 var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
-	mongoose = require('mongoose'),
-	jwt = require('express-jwt');
+	mongoose = require('mongoose');
 
 app.ENV = process.env.IS_PROD || false;
 app.PORT = process.env.PORT || 5000;
-app.DB_URL = process.env.DB_URL;
-app.SECRET = process.env.SECRET || '';
+app.DB_URL = process.env.DB_URL || 'mongodb://localhost/test';
+app.SECRET = process.env.SECRET || 'ashubaluba';
 app.AUDIENCE = process.env.AUDIENCE || '';
 
-var jwtCheck = jwt({
-  secret: new Buffer(app.SECRET, 'base64'),
-  audience: app.AUDIENCE
-});
+
+mongoose.connect(app.DB_URL);
 
 app.all('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -37,7 +34,10 @@ app.get('/', function (req, res) {
 	res.json({success: true, message: 'Olá, delícia!'});
 });
 
-app.use('/api', jwtCheck);
+app.use('/api', api);
+
+require('./routes/sign')(api);
+require('./routes/middlewares')(api);
 require('./routes/user')(api);
 
 app.get('/api', function (req, res) {
